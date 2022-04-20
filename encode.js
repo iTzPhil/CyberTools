@@ -1,4 +1,5 @@
 const inquirer = require('inquirer')
+const crypto = require('crypto');
 
 var questions = [
     {
@@ -9,15 +10,24 @@ var questions = [
     {
         type: 'input',
         name: 'key',
-        message: "Which key do you want to use?"
-    }
+        message: "Which key do you want to use? (32 characters)"}
 ]
 
+
+
 inquirer.prompt(questions).then(answers => {
-    // console.log(`Text: ${answers['text']}!`)
-    // console.log(`Key: ${answers['key']}!`)
     const text = answers['text']
     const key = answers['key']
-    console.log(text)
-    console.log(key)
+
+    const iv = crypto.randomBytes(16);
+    function encrypt(text) {
+
+        var cipher = crypto.createCipheriv('aes-256-cbc', key, iv)
+        var crypted = cipher.update(text, 'utf8', 'hex')
+        crypted += cipher.final('hex');
+        return crypted;
+    }
+
+    var encrypted = encrypt(text)
+    console.log(encrypted)
 })
