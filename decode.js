@@ -33,5 +33,5 @@ inquirer.prompt(questions).then(answers => {
             return dec;
     }
     var decrypted = decrypt(text)
-    console.log(decrypted)
+    console.log('The decoded text is:' + decrypted)
 })

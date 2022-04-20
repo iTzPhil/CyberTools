@@ -29,5 +29,7 @@ inquirer.prompt(questions).then(answers => {
     }
 
     var encrypted = encrypt(text)
-    console.log(encrypted)
+    console.log('The encoded text is: ' + encrypted)
+    console.log('The iv is: ' + iv.toString('hex'))
+    console.log('The key is: ' + key)
 })
