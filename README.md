@@ -15,4 +15,3 @@ Secret Texts is a Node.js script by @iTzPhil (me) to encode and decode text mess
 
 
 
-
