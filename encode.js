@@ -1,16 +1,19 @@
 const inquirer = require('inquirer')
 const crypto = require('crypto');
+const config = require("./config.json")
+const lang = require("./lang/" + config.lang + ".json")
 
 var questions = [
     {
         type: 'input',
         name: 'text',
-        message: "What do you want to encode?"
+        message: lang["msg.encode.text"]
     },
     {
         type: 'input',
         name: 'key',
-        message: "Which key do you want to use? (32 characters)"}
+        message: lang["msg.encode.key"]
+    }
 ]
 
 
@@ -29,7 +32,7 @@ inquirer.prompt(questions).then(answers => {
     }
 
     var encrypted = encrypt(text)
-    console.log('The encoded text is: ' + encrypted)
-    console.log('The iv is: ' + iv.toString('hex'))
-    console.log('The key is: ' + key)
+    console.log(lang["msg.encode.res.text"] + encrypted)
+    console.log(lang["msg.encode.res.iv"] + iv.toString('hex'))
+    console.log(lang["msg.encode.res.key"] + key)
 })

@@ -1,27 +1,30 @@
 const inquirer = require('inquirer')
 const config = require("./config.json")
+const lang = require("./lang/" + config.lang + ".json")
 const editJsonFile = require("edit-json-file");
 let cfg = editJsonFile(`./config.json`);
+
+ console.log(lang)
 
 
 var start = [
     {
         type: 'input',
         name: 'start',
-        message: "What do you want to do? (encode/decode/settings)"
+        message: lang["msg.start"]
     }]
 
 var settings = [
     {
         type: 'input',
         name: 'option',
-        message: "What do you want to change? (language)"
+        message: lang["msg.option"]
     }]
-var lang = [
+var language = [
     {
         type: 'input',
         name: 'lang',
-        message: "What language do you want to use? (en/de)"
+        message: lang["msg.lang"]
     }]
 
 
@@ -37,17 +40,17 @@ inquirer.prompt(start).then(answers => {
     } else if (action == 'settings') {
         inquirer.prompt(settings).then(answers => {
             if (answers['option'] == 'language') {
-                inquirer.prompt(lang).then(answers => {
+                inquirer.prompt(language).then(answers => {
                     if (answers['lang'] == 'en') {
                         cfg.set("lang", "en");
                         cfg.save();
-                        console.log('Language changed to english')
+                        console.log(lang["msg.lang.change.en"])
                     } else if (answers['lang'] == 'de') {
                         cfg.set("lang", "de");
                         cfg.save();
-                        console.log('Language changed to german')
+                        console.log(lang["msg.lang.change.en"])
                     } else {
-                        console.log('Language not found')
+                        console.log(lang["msg.lang.invalid"])
                     }
                 })
             } 
@@ -55,6 +58,6 @@ inquirer.prompt(start).then(answers => {
     }
 
  else {
-    console.log('Invalid option')
+    console.log(lang["msg.lang.invalid.option"])
 }
 })

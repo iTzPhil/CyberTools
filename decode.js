@@ -1,21 +1,23 @@
 const inquirer = require('inquirer')
 const crypto = require('crypto');
+const config = require("./config.json")
+const lang = require("./lang/" + config.lang + ".json")
 
 var questions = [
     {
         type: 'input',
         name: 'text',
-        message: "What do you want to decode?"
+        message: lang["msg.decode.text"]
     },
     {
         type: 'input',
         name: 'key',
-        message: "Which key do you want to use? (32 characters)"
+        message: lang["msg.decode.key"]
     },
     {
         type: 'input',
         name: 'iv',
-        message: "Which iv do you want to use?"
+        message: lang["msg.decode.iv"]
     }
 ]
 
@@ -33,5 +35,5 @@ inquirer.prompt(questions).then(answers => {
             return dec;
     }
     var decrypted = decrypt(text)
-    console.log('The decoded text is:' + decrypted)
+    console.log(lang["msg.decode.res"] + decrypted)
 })
