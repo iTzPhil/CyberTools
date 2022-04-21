@@ -1,8 +1,8 @@
 const inquirer = require('inquirer')
-const config = require("./config.json")
-const lang = require("./lang/" + config.lang + ".json")
+const config = require("./src/config.json")
+const lang = require("./src/lang/" + config.lang + ".json")
 const editJsonFile = require("edit-json-file");
-let cfg = editJsonFile(`./config.json`);
+let cfg = editJsonFile(`./src/config.json`);
 
  console.log(lang)
 
@@ -33,10 +33,10 @@ inquirer.prompt(start).then(answers => {
     const action = answers['start']
     if (action == 'encode') {
         console.log('\n \n \n \n \n \n \n \n')
-        const encodefile = require("./encode.js")
+        const encodefile = require("./src/code/encode.js")
     } else if (action == 'decode') {
         console.log('\n \n \n \n \n \n \n \n')
-        const decodefile = require("./decode.js")
+        const decodefile = require("./src/code/decode.js")
     } else if (action == 'settings') {
         inquirer.prompt(settings).then(answers => {
             if (answers['option'] == 'language') {

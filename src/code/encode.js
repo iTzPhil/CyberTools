@@ -1,7 +1,7 @@
 const inquirer = require('inquirer')
 const crypto = require('crypto');
-const config = require("./config.json")
-const lang = require("./lang/" + config.lang + ".json")
+const config = require("../config.json")
+const lang = require("../lang/" + config.lang + ".json")
 
 var questions = [
     {
