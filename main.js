@@ -1,13 +1,13 @@
 const inquirer = require('inquirer')
 const config = require("./config.json")
 const editJsonFile = require("edit-json-file");
-const { delay } = require('rxjs');
 let cfg = editJsonFile(`./config.json`);
+
 
 var start = [
     {
         type: 'input',
-        name: 'action',
+        name: 'start',
         message: "What do you want to do? (encode/decode/settings)"
     }]
 
@@ -27,7 +27,7 @@ var lang = [
 
 
 inquirer.prompt(start).then(answers => {
-    const action = answers['action']
+    const action = answers['start']
     if (action == 'encode') {
         console.log('\n \n \n \n \n \n \n \n')
         const encodefile = require("./encode.js")
