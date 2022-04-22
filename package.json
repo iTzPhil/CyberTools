@@ -1,4 +1,22 @@
 {
+  "name": "secrettexts",
+  "bin": "main.js",
+  "version": "1.0.0",
+  "description": "En- and Decode Texts",
+  "main": "main.js",
+  "scripts": {
+      "start": "node main.js",
+      "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "pkg": {
+      "assets": [
+          "src/*"
+      ],
+      "output": "dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "edit-json-file": "^1.7.0",
     "inquirer": "^8.2.2"
