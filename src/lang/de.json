@@ -1,5 +1,5 @@
 {
-    "msg.start": "Was wilst du machen? (encode/decode/settings)",
+    "msg.start": "Was willst du machen? (encode/decode/settings)",
     "msg.option": "Was willst du ändern? (language)",
     "msg.lang": "Welche Sprache willst du benutzen? (de/en)",
     "msg.lang.change.en": "Language changed to English",
