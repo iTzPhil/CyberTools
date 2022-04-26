@@ -4,6 +4,7 @@
     "msg.lang": "What language do you want to use? (en/de)",
     "msg.lang.change.en": "Language changed to English",
     "msg.lang.change.de": "Sprache geändert auf Deutsch",
+    "msg.lang.change.es": "Cambiaste el idioma. Ahora estás usando español.",
     "msg.lang.invalid": "Language not found",
     "msg.invalid.option": "Invalid option",
     "msg.encode.text": "What do you want to encode?",
