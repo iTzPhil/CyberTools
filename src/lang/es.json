@@ -1,0 +1,18 @@
+{   "msg.start": "¿Qué opción quieres usar? (encode/decode/settings)",
+    "msg.option": "¿Qué te gustaría cambiar al respecto? (language)",
+    "msg.lang": "¿Qué idioma quieres usar? (de/en/es)",
+    "msg.lang.change.en": "Language changed to English",
+    "msg.lang.change.de": "Sprache geändert auf Deutsch",
+    "msg.lang.change.es": "Cambiaste el idioma. Ahora estás usando español."
+    "msg.lang.invalid": "No se encontró este idioma",
+    "msg.invalid.option": "Esta opción es inválida",
+    "msg.encode.text": "¿Qué quieres cifrar?",
+    "msg.encode.key": "¿Qué token quieres usar? (32 caracteres)",
+    "msg.encode.res.text": "Aquí está su texto encriptado: ",
+    "msg.encode.res.iv": "El IV utilizado es: ",
+    "msg.enocode.res.key": "El token utilizado es: ",
+    "msg.decode.text": "¿Qué quieres hacer legible?",
+    "msg.decode.key": "¿Qué token se debe usar para el descifrado? (32 caracteres",
+    "msg.decode.iv": "¿Qué IV debe usarse para decodificar?",
+    "msg.decode.res": "Aquí está su texto: "
+}
