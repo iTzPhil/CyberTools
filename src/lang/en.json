@@ -1,7 +1,7 @@
 {
     "msg.start": "What do you want to do? (encode/decode/settings)",
     "msg.option": "What do you want to change? (language)",
-    "msg.lang": "What language do you want to use? (en/de)",
+    "msg.lang": "What language do you want to use? (en/de/es)",
     "msg.lang.change.en": "Language changed to English",
     "msg.lang.change.de": "Sprache geändert auf Deutsch",
     "msg.lang.change.es": "Cambiaste el idioma. Ahora estás usando español.",
