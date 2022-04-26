@@ -1,9 +1,10 @@
 {
     "msg.start": "Was willst du machen? (encode/decode/settings)",
     "msg.option": "Was willst du ändern? (language)",
-    "msg.lang": "Welche Sprache willst du benutzen? (de/en)",
+    "msg.lang": "Welche Sprache willst du benutzen? (de/en/es)",
     "msg.lang.change.en": "Language changed to English",
     "msg.lang.change.de": "Sprache geändert auf Deutsch",
+    "msg.lang.change.es": "Cambiaste el idioma. Ahora estás usando español.",
     "msg.lang.invalid": "Diese Sprache wurde nicht gefunden",
     "msg.invalid.option": "Diese Option ist ungültig",
     "msg.encode.text": "Was möchtest du verschlüsseln?",
