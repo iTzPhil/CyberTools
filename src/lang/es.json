@@ -3,7 +3,7 @@
     "msg.lang": "¿Qué idioma quieres usar? (de/en/es)",
     "msg.lang.change.en": "Language changed to English",
     "msg.lang.change.de": "Sprache geändert auf Deutsch",
-    "msg.lang.change.es": "Cambiaste el idioma. Ahora estás usando español."
+    "msg.lang.change.es": "Cambiaste el idioma. Ahora estás usando español.",
     "msg.lang.invalid": "No se encontró este idioma",
     "msg.invalid.option": "Esta opción es inválida",
     "msg.encode.text": "¿Qué quieres cifrar?",
