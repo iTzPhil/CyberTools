@@ -5,35 +5,47 @@ const editJsonFile = require("edit-json-file");
 let cfg = editJsonFile(`./src/config.json`);
 
 var lang = require("./src/lang/en.json")
- console.log(lang)
 
- if(config.lang == "en"){
-       var lang = require("./src/lang/en.json")
-    } else if(config.lang == "de"){
-         var lang = require("./src/lang/de.json")
-    } else if(config.lang == "es"){
-            var lang = require("./src/lang/es.json")
-    }
+if (config.lang == "en") {
+    var lang = require("./src/lang/en.json")
+} else if (config.lang == "de") {
+    var lang = require("./src/lang/de.json")
+} else if (config.lang == "es") {
+    var lang = require("./src/lang/es.json")
+}
 
 
 var start = [
     {
-        type: 'input',
+        type: 'list',
         name: 'start',
-        message: lang["msg.start"]
+        message: lang["msg.start"],
+        choices: [
+            { name: lang["msg.start.options.encode"], value: 'encode' },
+            { name: lang["msg.start.options.decode"], value: 'decode' },
+            { name: lang["msg.start.options.settings"], value: 'settings' }
+        ]
     }]
 
 var settings = [
     {
-        type: 'input',
+        type: 'list',
         name: 'option',
-        message: lang["msg.option"]
+        message: lang["msg.option"],
+        choices: [
+            { name: lang["msg.option.language"], value: 'language' }
+        ]
     }]
 var language = [
     {
-        type: 'input',
+        type: 'list',
         name: 'lang',
-        message: lang["msg.lang"]
+        message: lang["msg.lang"],
+        choices: [
+            { name: lang["msg.lang.en"], value: 'en' },
+            { name: lang["msg.lang.de"], value: 'de' },
+            { name: lang["msg.lang.es"], value: 'es' }
+        ]
     }]
 
 
@@ -41,10 +53,10 @@ var language = [
 inquirer.prompt(start).then(answers => {
     const action = answers['start']
     if (action == 'encode') {
-        console.log('\n \n \n \n \n \n \n \n')
+        console.log('\n \n \n')
         const encodefile = require("./src/code/encode.js")
     } else if (action == 'decode') {
-        console.log('\n \n \n \n \n \n \n \n')
+        console.log('\n \n \n')
         const decodefile = require("./src/code/decode.js")
     } else if (action == 'settings') {
         inquirer.prompt(settings).then(answers => {
@@ -66,11 +78,11 @@ inquirer.prompt(start).then(answers => {
                         console.log(lang["msg.lang.invalid"])
                     }
                 })
-            } 
+            }
         })
     }
 
- else {
-    console.log(lang["msg.lang.invalid.option"])
-}
+    else {
+        console.log(lang["msg.lang.invalid.option"])
+    }
 })
