@@ -5,7 +5,6 @@ const editJsonFile = require("edit-json-file");
 let cfg = editJsonFile(`./src/config.json`);
 
 var lang = require("./src/lang/en.json")
- console.log(lang)
 
  if(config.lang == "en"){
        var lang = require("./src/lang/en.json")
@@ -57,7 +56,7 @@ inquirer.prompt(start).then(answers => {
                     } else if (answers['lang'] == 'de') {
                         cfg.set("lang", "de");
                         cfg.save();
-                        console.log(lang["msg.lang.change.en"])
+                        console.log(lang["msg.lang.change.de"])
                     } else if (answers['lang'] == 'es') {
                         cfg.set("lang", "es");
                         cfg.save();
