@@ -1,10 +1,19 @@
 const inquirer = require('inquirer')
 const config = require("./src/config.json")
-const lang = require("./src/lang/" + config.lang + ".json")
+//const lang = require("./src/lang/" + config.lang + ".json")
 const editJsonFile = require("edit-json-file");
 let cfg = editJsonFile(`./src/config.json`);
 
+var lang = require("./src/lang/en.json")
  console.log(lang)
+
+ if(config.lang == "en"){
+       var lang = require("./src/lang/en.json")
+    } else if(config.lang == "de"){
+         var lang = require("./src/lang/de.json")
+    } else if(config.lang == "es"){
+            var lang = require("./src/lang/es.json")
+    }
 
 
 var start = [
