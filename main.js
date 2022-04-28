@@ -49,6 +49,10 @@ inquirer.prompt(start).then(answers => {
                         cfg.set("lang", "de");
                         cfg.save();
                         console.log(lang["msg.lang.change.en"])
+                    } else if (answers['lang'] == 'es') {
+                        cfg.set("lang", "es");
+                        cfg.save();
+                        console.log(lang["msg.lang.change.es"])
                     } else {
                         console.log(lang["msg.lang.invalid"])
                     }
