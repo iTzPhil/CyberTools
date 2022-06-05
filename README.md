@@ -11,6 +11,7 @@ Secret Texts is a Node.js script by @iTzPhil (me) to encode and decode text mess
 |  inquirer | Ask for stuff in the console  |
 | crypto  | En- and Decode texts  |
 | edit-json-file  | Edit json files  |
+| xmlhttprequest | Send requests to apis |
 
 
 
