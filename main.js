@@ -33,7 +33,8 @@ var settings = [
         name: 'option',
         message: lang["msg.option"],
         choices: [
-            { name: lang["msg.option.language"], value: 'language' }
+            { name: lang["msg.option.language"], value: 'language' },
+            { name: lang["msg.option.keysave"], value: 'keysave' }
         ]
     }]
 var language = [
@@ -48,6 +49,25 @@ var language = [
         ]
     }]
 
+
+var keysave = [
+    {
+        type: 'list',
+        name: 'keys',
+        message: lang["msg.keysave"],
+        choices: [
+            { name: lang["msg.encode.key1"], value: 'key1' },
+            { name: lang["msg.encode.key2"], value: 'key2' },
+            { name: lang["msg.encode.key3"], value: 'key3' }
+        ]
+    }]
+
+var editkey = [
+    {
+        type: 'input',
+        name: 'newkey',
+        message: lang["msg.editkey"]
+    }]
 
 
 inquirer.prompt(start).then(answers => {
@@ -79,10 +99,48 @@ inquirer.prompt(start).then(answers => {
                     }
                 })
             }
-        })
-    }
+            if (answers['option'] == 'keysave') {
+                inquirer.prompt(keysave).then(answers => {
+                    if (answers['keys'] == 'key1') {
+                        inquirer.prompt(editkey).then(answers => {
+                            if (answers['newkey'].length != 32) {
+                                console.log(lang["msg.key.invalid"])
+                            } else {
+                                cfg.set("key1", answers['newkey']);
+                                cfg.save();
+                                console.log(lang["msg.key.change.key"])
+                            }
+                        })
+                    } else if (answers['keys'] == 'key2') {
+                        inquirer.prompt(editkey).then(answers => {
+                            if (answers['newkey'].length != 32) {
+                                console.log(lang["msg.key.invalid"])
+                            } else {
+                                cfg.set("key2", answers['newkey']);
+                                cfg.save();
+                                console.log(lang["msg.key.change.key"])
+                            }
+                        })
+                    } else if (answers['keys'] == 'key3') {
+                        inquirer.prompt(editkey).then(answers => {
+                            if (answers['newkey'].length != 32) {
+                                console.log(lang["msg.key.invalid"])
+                            } else {
+                                cfg.set("key3", answers['newkey']);
+                                cfg.save();
+                                console.log(lang["msg.key.change.key"])
+                            }
 
-    else {
-        console.log(lang["msg.lang.invalid.option"])
+                        })
+
+                    }
+
+                    else {
+                        console.log(lang["msg.lang.invalid.option"])
+                    }
+                })
+            }
+        }
+        )
     }
 })
