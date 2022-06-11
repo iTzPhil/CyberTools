@@ -1,7 +1,8 @@
 {
     "msg.start": "What do you want to do? (encode/decode/settings)",
     "msg.start.options.encode": "Encode",
-    "msg.start.options.decode": "Decode",	
+    "msg.start.options.decode": "Decode",
+    "msg.start.options.geoip": "Locate IP",
     "msg.start.options.settings": "Settings",
     "msg.option": "What do you want to change?",
     "msg.option.language": "Language",
@@ -27,5 +28,19 @@
     "msg.decode.text": "What do you want to decode?",
     "msg.decode.key": "Which key do you want to use? (32 characters)",
     "msg.decode.iv": "Which iv do you want to use?",
-    "msg.decode.res": "The decoded text is: "
+    "msg.decode.res": "The decoded text is: ",
+    "msg.geoip.start": "What's the ip you want to locate?",
+    "msg.geoip.true": "Yes",
+    "msg.geoip.false": "No",
+    "msg.geoip.continent": "Continent: ",
+    "msg.geoip.country": "Country: ",
+    "msg.geoip.city": "city: ",
+    "msg.geoip.coordinates": "Coordinates: ",
+    "msg.geoip.region": "Region: ",
+    "msg.geoip.zip": "Postal: ",
+    "msg.geoip.timezone": "Timezone: ",
+    "msg.geoip.org": "Provider: ",
+    "msg.geoip.mobile": "Mobile: ",
+    "msg.geoip.proxy": "Proxy: ",
+    "msg.geoip.hosting": "Datacenter/Server: "
 }
