@@ -21,7 +21,7 @@
     "msg.encode.key": "¿Qué token quieres usar? (32 caracteres)",
     "msg.encode.res.text": "Aquí está su texto encriptado: ",
     "msg.encode.res.iv": "El IV utilizado es: ",
-    "msg.enocode.res.key": "El token utilizado es: ",
+    "msg.encode.res.key": "El token utilizado es: ",
     "msg.decode.text": "¿Qué quieres hacer legible?",
     "msg.decode.key": "¿Qué token se debe usar para el descifrado? (32 caracteres",
     "msg.decode.iv": "¿Qué IV debe usarse para decodificar?",

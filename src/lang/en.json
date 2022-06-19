@@ -24,7 +24,7 @@
     "msg.encode.key": "Which key do you want to use? (32 characters)",
     "msg.encode.res.text": "The encoded text is: ",
     "msg.encode.res.iv": "The iv is: ",
-    "msg.enocode.res.key": "The key is: ",
+    "msg.encode.res.key": "The key is: ",
     "msg.encode.keyc": "Choose a key",
     "msg.encode.key1": "Key 1",
     "msg.encode.key2": "Key 2",

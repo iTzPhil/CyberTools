@@ -24,7 +24,7 @@
     "msg.encode.key": "Welcher Schlüssel soll benutzt werden? (32 Zeichen)",
     "msg.encode.res.text": "Das verschlüsselte Text lautet: ",
     "msg.encode.res.iv": "Der verwendete IV lautet: ",
-    "msg.enocode.res.key": "Der verwendete Schlüssel lautet: ",
+    "msg.encode.res.key": "Der verwendete Schlüssel lautet: ",
     "msg.encode.keyc": "Wähle den Schlüssel aus",
     "msg.encode.key1": "Schlüssel 1",
     "msg.encode.key2": "Schlüssel 2",
