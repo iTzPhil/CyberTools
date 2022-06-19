@@ -52,7 +52,6 @@ inquirer.prompt(questions).then(answers => {
         })
     } else {
         const iv = crypto.randomBytes(16);
-        console.log(key)
         function encrypt(text) {
 
             var cipher = crypto.createCipheriv('aes-256-cbc', key, iv)
