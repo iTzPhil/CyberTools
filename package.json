@@ -10,7 +10,12 @@
   },
   "pkg": {
     "assets": [
-      "src/*"
+      "src/*",
+      "./main.js",
+      "src/config.json",
+      "src/lang/es.json",
+      "src/lang/en.json",
+      "src/lang/de.json"
     ],
     "output": "dist"
   },

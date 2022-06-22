@@ -1,7 +1,15 @@
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const inquirer = require('inquirer')
 const config = require("../config.json")
-const lang = require("../lang/" + config.lang + ".json")
+var lang = require("../lang/en.json")
+
+if (config.lang == "en") {
+    var lang = require("../lang/en.json")
+} else if (config.lang == "de") {
+    var lang = require("../lang/de.json")
+} else if (config.lang == "es") {
+    var lang = require("../lang/es.json")
+}
 
 
 var questions = [

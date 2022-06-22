@@ -1,6 +1,5 @@
 const inquirer = require('inquirer')
 const config = require("./src/config.json")
-//const lang = require("./src/lang/" + config.lang + ".json")
 const editJsonFile = require("edit-json-file");
 let cfg = editJsonFile(`./src/config.json`);
 
