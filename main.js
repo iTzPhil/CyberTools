@@ -2,6 +2,7 @@ const inquirer = require('inquirer')
 const config = require("./src/config.json")
 const editJsonFile = require("edit-json-file");
 let cfg = editJsonFile(`./src/config.json`);
+const crypto = require('crypto');
 
 var lang = require("./src/lang/en.json")
 
@@ -34,7 +35,8 @@ var settings = [
         message: lang["msg.option"],
         choices: [
             { name: lang["msg.option.language"], value: 'language' },
-            { name: lang["msg.option.keysave"], value: 'keysave' }
+            { name: lang["msg.option.keysave"], value: 'keysave' },
+            { name: lang["msg.option.ivsave"], value: 'ivsave' }
         ]
     }]
 var language = [
@@ -59,6 +61,18 @@ var keysave = [
             { name: lang["msg.encode.key1"], value: 'key1' },
             { name: lang["msg.encode.key2"], value: 'key2' },
             { name: lang["msg.encode.key3"], value: 'key3' }
+        ]
+    }]
+
+var ivsave = [
+    {
+        type: 'list',
+        name: 'ivs',
+        message: lang["msg.ivsave"],
+        choices: [
+            { name: "IV 1", value: 'iv1' },
+            { name: "IV 2", value: 'iv2' },
+            { name: "IV 3", value: 'iv3' }
         ]
     }]
 
@@ -143,7 +157,41 @@ inquirer.prompt(start).then(answers => {
                     }
                 })
             }
-        }
-        )
+            if (answers['option'] == "ivsave") {
+                inquirer.prompt(ivsave).then(answers => {
+                    if (answers['ivs'] == 'iv1') {
+                        const iv = crypto.randomBytes(16);
+                        const iv2 = iv.toString('hex')
+                        cfg.set("iv1", iv2);
+                        cfg.save();
+                        console.log(lang["msg.ivsave.update"])
+                    } else if (answers['option'] == "ivsave") {
+                        inquirer.prompt(ivsave).then(answers => {
+                            if (answers['ivs'] == 'iv2') {
+                                const iv = crypto.randomBytes(16);
+                                const iv2 = iv.toString('hex')
+                                cfg.set("iv2", iv2);
+                                cfg.save();
+                                console.log(lang["msg.ivsave.update"])
+                            } else if (answers['option'] == "ivsave") {
+                                inquirer.prompt(ivsave).then(answers => {
+                                    if (answers['ivs'] == 'iv2') {
+                                        const iv = crypto.randomBytes(16);
+                                        const iv2 = iv.toString('hex')
+                                        cfg.set("iv2", iv2);
+                                        cfg.save();
+                                        console.log(lang["msg.ivsave.update"])
+                                    }
+
+
+                                })
+                            }
+                        }
+                        )
+                    }
+
+                })
+            }
+        })
     }
 })
