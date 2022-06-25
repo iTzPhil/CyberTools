@@ -22,9 +22,9 @@ var questions = [
         name: 'keyc',
         message: lang["msg.encode.keyc"],
         choices: [
-            { name: lang["msg.encode.key1"], value: config.key1 },
-            { name: lang["msg.encode.key2"], value: config.key2 },
-            { name: lang["msg.encode.key3"], value: config.key3 },
+            { name: lang["msg.encode.key1"], value: "1" },
+            { name: lang["msg.encode.key2"], value: "2" },
+            { name: lang["msg.encode.key3"], value: "3" },
             { name: lang["msg.encode.key.custom"], value: 'custom' }
         ]
     }
@@ -38,20 +38,10 @@ var customkey = [
     }
 ]
 
-var invec = [
-    {
-        type: 'input',
-        name: 'iv',
-        message: lang["msg.decode.iv"]
-    }
-]
-
-
-
 
 inquirer.prompt(questions).then(answers => {
     const text = answers['text']
-    const key = answers['keyc']
+    var key = answers['keyc']
     
 
     if (key == 'custom') {
@@ -76,9 +66,17 @@ inquirer.prompt(questions).then(answers => {
         })
     } else {
 
-        inquirer.prompt(invec).then(answers => {
+        if (answers['keyc'] == "1") {
+            var key = config.key1
+            var iv = Buffer.from(config.iv1, 'hex')
+        } else if (answers['keyc'] == "2") {
+            var key = config.key2
+            var iv = Buffer.from(config.iv2, 'hex')
+        } else if (answers['keyc'] == "3") {
+            var key = config.key3
+            var iv = Buffer.from(config.iv2, 'hex')
+        }
 
-            const iv = Buffer.from(answers['iv'])
             function decrypt(text) {
                 var decipher = crypto.createDecipheriv('aes-256-cbc', key, iv)
                 var dec = decipher.update(text, 'hex', 'utf8')
@@ -87,7 +85,6 @@ inquirer.prompt(questions).then(answers => {
             }
             var decrypted = decrypt(text)
             console.log(lang["msg.decode.res"] + decrypted)
-        })
   //      var decrypted = decrypt(text)
     //    console.log(lang["msg.decode.res"] + decrypted)
     }

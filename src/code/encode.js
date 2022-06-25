@@ -24,9 +24,9 @@ var questions = [
         name: 'keyc',
         message: lang["msg.encode.keyc"],
         choices: [
-            { name: lang["msg.encode.key1"], value: config.key1 },
-            { name: lang["msg.encode.key2"], value: config.key2 },
-            { name: lang["msg.encode.key3"], value: config.key3 },
+            { name: lang["msg.encode.key1"], value: "1" },
+            { name: lang["msg.encode.key2"], value: "2" },
+            { name: lang["msg.encode.key3"], value: "3" },
             { name: lang["msg.encode.key.custom"], value: 'custom' }
         ]
     }
@@ -42,7 +42,7 @@ var customkey = [
 
 inquirer.prompt(questions).then(answers => {
     const text = answers['text']
-    const key = answers['keyc']
+    var key = answers['keyc']
     if (key == 'custom') {
         inquirer.prompt(customkey).then(answers => {
             const key = answers['key2']
@@ -61,7 +61,19 @@ inquirer.prompt(questions).then(answers => {
             console.log(lang["msg.encode.res.key"] + key)
         })
     } else {
-        const iv = crypto.randomBytes(16);
+        if (answers['keyc'] == "1") {
+            var key = config.key1
+            var iv = Buffer.from(config.iv1, 'hex')
+        } else if (answers['keyc'] == "2") {
+            var key = config.key2
+            var iv = Buffer.from(config.iv2, 'hex')
+        } else if (answers['keyc'] == "3") {
+            var key = config.key3
+            var iv = Buffer.from(config.iv2, 'hex')
+        }
+
+        
+
         function encrypt(text) {
 
             var cipher = crypto.createCipheriv('aes-256-cbc', key, iv)
