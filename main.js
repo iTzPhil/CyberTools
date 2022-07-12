@@ -1,17 +1,19 @@
 const inquirer = require('inquirer')
-const config = require("./src/config.json")
+const config = require(process.cwd() + "/src/config.json")
 const editJsonFile = require("edit-json-file");
-let cfg = editJsonFile(`./src/config.json`);
+let cfg = editJsonFile(process.cwd() + `/src/config.json`);
 const crypto = require('crypto');
+const fs = require('fs');
+const path = require("path")
 
-var lang = require("./src/lang/en.json")
+var lang = require( process.cwd() + "/src/lang/en.json")
 
 if (config.lang == "en") {
-    var lang = require("./src/lang/en.json")
+    var lang = require(process.cwd() + "/src/lang/en.json")
 } else if (config.lang == "de") {
-    var lang = require("./src/lang/de.json")
+    var lang = require(process.cwd() + "/src/lang/de.json")
 } else if (config.lang == "es") {
-    var lang = require("./src/lang/es.json")
+    var lang = require(process.cwd() + "/src/lang/es.json")
 }
 
 

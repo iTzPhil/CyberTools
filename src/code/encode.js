@@ -1,16 +1,16 @@
 const inquirer = require('inquirer')
 const crypto = require('crypto');
-const config = require("../config.json")
+const config = require(process.cwd() + "/src/config.json")
 
 
-var lang = require("../lang/en.json")
+var lang = require(process.cwd() + "/src/lang/en.json")
 
 if (config.lang == "en") {
-    var lang = require("../lang/en.json")
+    var lang = require(process.cwd() + "/src/lang/en.json")
 } else if (config.lang == "de") {
-    var lang = require("../lang/de.json")
+    var lang = require(process.cwd() + "/src/lang/de.json")
 } else if (config.lang == "es") {
-    var lang = require("../lang/es.json")
+    var lang = require(process.cwd() + "/src/lang/es.json")
 }
 
 var questions = [
