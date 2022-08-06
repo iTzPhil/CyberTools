@@ -113,7 +113,7 @@ inquirer.prompt(questions).then(answers => {
         notifier.notify({
             title: config.name,
             message: lang["msg.file.created"],
-            icon: process.cwd() + '/src/assets/logo.png'
+            icon: process.cwd() + '/src/assets/logo.png',
             message: lang["msg.file.created"]
           });
           inquirer.prompt(endproccess).then(answers => {
