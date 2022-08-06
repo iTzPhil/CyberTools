@@ -2,7 +2,8 @@
 ###### by iTzPhil
 <br>
 
-
+**I am not responsible for the use or consequences of using this software.**
+<br><br>
 
 CyberTools is a Node.js script by @iTzPhil (me) which offers you features like text en- and decoding or IP adress geo-location. I'm planing on even more features, feel free to send in ideas via issue or even create a pull request with your own feature.The tool is developed to be easy to use for everyone.  Also I want to make this tool available in multiple languages. If you are able to translate into a language which isn't supported feel free to create a pull request. 
 <br><br>
