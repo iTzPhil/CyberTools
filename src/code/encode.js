@@ -13,6 +13,7 @@ const notifier = require('node-notifier');
 
 var lang = require(process.cwd() + "/src/lang/en.json")
 
+
 if (config.lang == "en") {
     var lang = require(process.cwd() + "/src/lang/en.json")
 } else if (config.lang == "de") {
@@ -105,11 +106,14 @@ inquirer.prompt(questions).then(answers => {
         console.log(lang["msg.encode.res.text"] + encrypted)
         console.log(lang["msg.encode.res.iv"] + iv.toString('hex'))
         console.log(lang["msg.encode.res.key"] + key)
+
         fs.writeFile(desktopDir + '/encoding-' + uuidv4() + '.txt', lang["msg.encode.res.text"] + encrypted + "\n" + lang["msg.encode.res.iv"] + iv.toString('hex') + "\n" + lang["msg.encode.res.key"] + key, function (err) {
             if (err) return console.log(err);
         });
         notifier.notify({
             title: config.name,
+            message: lang["msg.file.created"],
+            icon: process.cwd() + '/src/assets/logo.png',
             message: lang["msg.file.created"]
           });
           inquirer.prompt(endproccess).then(answers => {

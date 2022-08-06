@@ -10,7 +10,10 @@ const {
 } = require('uuid');
 const notifier = require('node-notifier');
 
+
+
 var lang = require(process.cwd() + "/src/lang/en.json")
+
 
 if (config.lang == "en") {
     var lang = require(process.cwd() + "/src/lang/en.json")
@@ -105,12 +108,12 @@ inquirer.prompt(questions).then(answers => {
             }
             var decrypted = decrypt(text)
             console.log(lang["msg.decode.res"] + decrypted)
-
             fs.writeFile(desktopDir + '/decoding-' + uuidv4() + '.txt',lang["msg.decode.res"] + decrypted , function (err) {
                 if (err) return console.log(err);
             });
             notifier.notify({
                 title: config.name,
+                icon: process.cwd() + '/src/assets/logo.png',
                 message: lang["msg.file.created"]
               });
               inquirer.prompt(endproccess).then(answers => {

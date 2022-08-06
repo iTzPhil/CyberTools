@@ -1,8 +1,8 @@
 {
-  "name": "secrettexts",
+  "name": "cybertools",
   "bin": "main.js",
   "version": "1.0.0",
-  "description": "En- and Decode Texts",
+  "description": "Multitool",
   "main": "main.js",
   "scripts": {
     "start": "node main.js",
@@ -12,7 +12,9 @@
     "assets": [],
     "output": "dist",
     "targets": [
-      "node16-windows-x64"
+      "node16-windows-x64",
+      "node16-linux-x64"
+
     ]
   },
   "keywords": [],
@@ -22,7 +24,6 @@
     "edit-json-file": "^1.7.0",
     "inquirer": "^8.2.2",
     "node-notifier": "^10.0.1",
-    "popups": "^1.1.3",
     "uuid": "^8.3.2",
     "xmlhttprequest": "^1.8.0"
   }
