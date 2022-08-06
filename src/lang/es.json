@@ -43,5 +43,7 @@
     "msg.geoip.org": "Proveedor: ",
     "msg.geoip.mobile": "Móvil: ",
     "msg.geoip.proxy": "Proxy: ",
-    "msg.geoip.hosting": "Centro de datos/servidor: "
+    "msg.geoip.hosting": "Centro de datos/servidor: ",
+    "msg.end": "Pulse cualquier tecla para finalizar el proceso.",
+    "msg.file.created": "Se creó un archivo con el resultado en el escritorio."
 }

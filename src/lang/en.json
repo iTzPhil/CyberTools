@@ -49,5 +49,7 @@
     "msg.geoip.org": "Provider: ",
     "msg.geoip.mobile": "Mobile: ",
     "msg.geoip.proxy": "Proxy: ",
-    "msg.geoip.hosting": "Datacenter/Server: "
+    "msg.geoip.hosting": "Datacenter/Server: ",
+    "msg.end": "Press any key to end the process.",
+    "msg.file.created": "A file with the result was created on the desktop."
 }

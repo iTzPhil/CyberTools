@@ -9,18 +9,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "pkg": {
-    "assets": [
-      "src/*",
-      "./main.js",
-      "src/config.json",
-      "src/lang/es.json",
-      "src/lang/en.json",
-      "src/lang/de.json"
-    ],
+    "assets": [],
     "output": "dist",
     "targets": [
       "node16-windows-x64",
       "node16-linux-x64"
+
     ]
   },
   "keywords": [],
