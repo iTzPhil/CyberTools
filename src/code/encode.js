@@ -1,6 +1,14 @@
 const inquirer = require('inquirer')
 const crypto = require('crypto');
 const config = require(process.cwd() + "/src/config.json")
+fs = require('fs');
+const homeDir = require('os').homedir();
+const desktopDir = `${homeDir}/Desktop`;
+const {
+    v1: uuidv1,
+    v4: uuidv4,
+} = require('uuid');
+const notifier = require('node-notifier');
 
 
 var lang = require(process.cwd() + "/src/lang/en.json")
@@ -17,12 +25,14 @@ var questions = [
     {
         type: 'input',
         name: 'text',
+        prefix: '',
         message: lang["msg.encode.text"]
     },
     {
         type: 'list',
         name: 'keyc',
         message: lang["msg.encode.keyc"],
+        prefix: '',
         choices: [
             { name: lang["msg.encode.key1"], value: "1" },
             { name: lang["msg.encode.key2"], value: "2" },
@@ -36,7 +46,17 @@ var customkey = [
     {
         type: 'input',
         name: 'key2',
+        prefix: '',
         message: lang["msg.encode.key"]
+    }
+]
+
+var endproccess = [
+    {
+        type: 'input',
+        name: 'end',
+        prefix: '',
+        message: lang["msg.end"]
     }
 ]
 
@@ -72,7 +92,6 @@ inquirer.prompt(questions).then(answers => {
             var iv = Buffer.from(config.iv2, 'hex')
         }
 
-        
 
         function encrypt(text) {
 
@@ -86,8 +105,20 @@ inquirer.prompt(questions).then(answers => {
         console.log(lang["msg.encode.res.text"] + encrypted)
         console.log(lang["msg.encode.res.iv"] + iv.toString('hex'))
         console.log(lang["msg.encode.res.key"] + key)
+        fs.writeFile(desktopDir + '/encoding-' + uuidv4() + '.txt', lang["msg.encode.res.text"] + encrypted + "\n" + lang["msg.encode.res.iv"] + iv.toString('hex') + "\n" + lang["msg.encode.res.key"] + key, function (err) {
+            if (err) return console.log(err);
+        });
+        notifier.notify({
+            title: config.name,
+            message: lang["msg.file.created"]
+          });
+          inquirer.prompt(endproccess).then(answers => {
+            process.exit()
+          })
+
     }
 
 
 
 })
+

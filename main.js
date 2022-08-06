@@ -6,7 +6,7 @@ const crypto = require('crypto');
 const fs = require('fs');
 const path = require("path")
 
-var lang = require( process.cwd() + "/src/lang/en.json")
+var lang = require(process.cwd() + "/src/lang/en.json")
 
 if (config.lang == "en") {
     var lang = require(process.cwd() + "/src/lang/en.json")
@@ -22,6 +22,7 @@ var start = [
         type: 'list',
         name: 'start',
         message: lang["msg.start"],
+        prefix: '',
         choices: [
             { name: lang["msg.start.options.encode"], value: 'encode' },
             { name: lang["msg.start.options.decode"], value: 'decode' },
@@ -35,6 +36,7 @@ var settings = [
         type: 'list',
         name: 'option',
         message: lang["msg.option"],
+        prefix: '',
         choices: [
             { name: lang["msg.option.language"], value: 'language' },
             { name: lang["msg.option.keysave"], value: 'keysave' },
@@ -45,6 +47,7 @@ var language = [
     {
         type: 'list',
         name: 'lang',
+        prefix: '',
         message: lang["msg.lang"],
         choices: [
             { name: lang["msg.lang.en"], value: 'en' },
@@ -59,6 +62,7 @@ var keysave = [
         type: 'list',
         name: 'keys',
         message: lang["msg.keysave"],
+        prefix: '',
         choices: [
             { name: lang["msg.encode.key1"], value: 'key1' },
             { name: lang["msg.encode.key2"], value: 'key2' },
@@ -71,6 +75,7 @@ var ivsave = [
         type: 'list',
         name: 'ivs',
         message: lang["msg.ivsave"],
+        prefix: '',
         choices: [
             { name: "IV 1", value: 'iv1' },
             { name: "IV 2", value: 'iv2' },
@@ -82,6 +87,7 @@ var editkey = [
     {
         type: 'input',
         name: 'newkey',
+        prefix: '',
         message: lang["msg.editkey"]
     }]
 
@@ -105,16 +111,32 @@ inquirer.prompt(start).then(answers => {
                         cfg.set("lang", "en");
                         cfg.save();
                         console.log(lang["msg.lang.change.en"])
+                        inquirer.prompt(endproccess).then(answers => {
+                            process.exit()
+                        })
+
                     } else if (answers['lang'] == 'de') {
                         cfg.set("lang", "de");
                         cfg.save();
                         console.log(lang["msg.lang.change.en"])
+                        inquirer.prompt(endproccess).then(answers => {
+                            process.exit()
+                        })
+
                     } else if (answers['lang'] == 'es') {
                         cfg.set("lang", "es");
                         cfg.save();
                         console.log(lang["msg.lang.change.es"])
+                        inquirer.prompt(endproccess).then(answers => {
+                            process.exit()
+                          })
+            
                     } else {
                         console.log(lang["msg.lang.invalid"])
+                        inquirer.prompt(endproccess).then(answers => {
+                            process.exit()
+                          })
+            
                     }
                 })
             }
