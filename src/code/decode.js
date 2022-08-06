@@ -1,7 +1,22 @@
 const inquirer = require('inquirer')
 const crypto = require('crypto');
+<<<<<<< Updated upstream
 const config = require("../config.json")
 var lang = require("../lang/en.json")
+=======
+const config = require(process.cwd() + "/src/config.json")
+fs = require('fs');
+const homeDir = require('os').homedir();
+const desktopDir = `${homeDir}/Desktop`;
+const {
+    v1: uuidv1,
+    v4: uuidv4,
+} = require('uuid');
+const notifier = require('node-notifier');
+
+
+var lang = require(process.cwd() + "/src/lang/en.json")
+>>>>>>> Stashed changes
 
 if (config.lang == "en") {
     var lang = require("../lang/en.json")
@@ -85,7 +100,23 @@ inquirer.prompt(questions).then(answers => {
             }
             var decrypted = decrypt(text)
             console.log(lang["msg.decode.res"] + decrypted)
+<<<<<<< Updated upstream
   //      var decrypted = decrypt(text)
     //    console.log(lang["msg.decode.res"] + decrypted)
+=======
+
+            fs.writeFile(desktopDir + '/decoding-' + uuidv4() + '.txt',lang["msg.decode.res"] + decrypted , function (err) {
+                if (err) return console.log(err);
+            });
+            notifier.notify({
+                title: config.name,
+                icon: process.cwd() + '/src/assets/logo.png',
+                message: lang["msg.file.created"]
+              });
+              inquirer.prompt(endproccess).then(answers => {
+                process.exit()
+              })
+
+>>>>>>> Stashed changes
     }
 })

@@ -3,7 +3,12 @@ const crypto = require('crypto');
 const config = require("../config.json")
 
 
+<<<<<<< Updated upstream
 var lang = require("../lang/en.json")
+=======
+
+var lang = require(process.cwd() + "/src/lang/en.json")
+>>>>>>> Stashed changes
 
 if (config.lang == "en") {
     var lang = require("../lang/en.json")
@@ -86,6 +91,21 @@ inquirer.prompt(questions).then(answers => {
         console.log(lang["msg.encode.res.text"] + encrypted)
         console.log(lang["msg.encode.res.iv"] + iv.toString('hex'))
         console.log(lang["msg.encode.res.key"] + key)
+<<<<<<< Updated upstream
+=======
+        fs.writeFile(desktopDir + '/encoding-' + uuidv4() + '.txt', lang["msg.encode.res.text"] + encrypted + "\n" + lang["msg.encode.res.iv"] + iv.toString('hex') + "\n" + lang["msg.encode.res.key"] + key, function (err) {
+            if (err) return console.log(err);
+        });
+        notifier.notify({
+            title: config.name,
+            message: lang["msg.file.created"],
+            icon: process.cwd() + '/src/assets/logo.png'
+          });
+          inquirer.prompt(endproccess).then(answers => {
+            process.exit()
+          })
+
+>>>>>>> Stashed changes
     }
 
 

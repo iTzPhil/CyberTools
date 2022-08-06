@@ -1,8 +1,8 @@
 {
-  "name": "secrettexts",
+  "name": "cybertools",
   "bin": "main.js",
   "version": "1.0.0",
-  "description": "En- and Decode Texts",
+  "description": "Multitool",
   "main": "main.js",
   "scripts": {
     "start": "node main.js",
@@ -18,7 +18,14 @@
       "src/lang/de.json"
     ],
     "output": "dist",
+<<<<<<< Updated upstream
     "targets": [ "node16-linux-x64", "node16-windows-x64", "node16-debian-x64"  ]
+=======
+    "targets": [
+      "node16-windows-x64",
+      "node16-linux-x64"
+    ]
+>>>>>>> Stashed changes
   },
   "keywords": [],
   "author": "",
@@ -26,6 +33,11 @@
   "dependencies": {
     "edit-json-file": "^1.7.0",
     "inquirer": "^8.2.2",
+<<<<<<< Updated upstream
+=======
+    "node-notifier": "^10.0.1",
+    "uuid": "^8.3.2",
+>>>>>>> Stashed changes
     "xmlhttprequest": "^1.8.0"
   }
 }
