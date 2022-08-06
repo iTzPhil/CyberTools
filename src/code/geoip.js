@@ -1,14 +1,23 @@
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const inquirer = require('inquirer')
-const config = require("../config.json")
-var lang = require("../lang/en.json")
+const config = require(process.cwd() + "/src/config.json")
+fs = require('fs');
+const homeDir = require('os').homedir();
+const desktopDir = `${homeDir}/Desktop`;
+const {
+    v1: uuidv1,
+    v4: uuidv4,
+} = require('uuid');
+const notifier = require('node-notifier');
+
+var lang = require(process.cwd() + "/src/lang/en.json")
 
 if (config.lang == "en") {
-    var lang = require("../lang/en.json")
+    var lang = require(process.cwd() + "/src/lang/en.json")
 } else if (config.lang == "de") {
-    var lang = require("../lang/de.json")
+    var lang = require(process.cwd() + "/src/lang/de.json")
 } else if (config.lang == "es") {
-    var lang = require("../lang/es.json")
+    var lang = require(process.cwd() + "/src/lang/es.json")
 }
 
 
@@ -16,10 +25,19 @@ var questions = [
     {
         type: 'input',
         name: 'ip',
+        prefix: '',
         message: lang["msg.geoip.start"]
     }
 ]
 
+var endproccess = [
+    {
+        type: 'input',
+        name: 'end',
+        prefix: '',
+        message: lang["msg.end"]
+    }
+]
 
 
 inquirer.prompt(questions).then(answers => {
@@ -66,6 +84,18 @@ geoip.onreadystatechange = function () {
         console.log(lang["msg.geoip.mobile"] + response.mobile);
         console.log(lang["msg.geoip.proxy"] + response.proxy);
         console.log(lang["msg.geoip.hosting"] + response.hosting);
+
+        fs.writeFile(desktopDir + '/geoip-' + uuidv4() + '.txt',lang["msg.geoip.continent"] + response.continent + "\n" + lang["msg.geoip.country"] + response.country + "\n" + lang["msg.geoip.city"] + response.city + "\n" + lang["msg.geoip.region"] + response.regionName + "\n" + lang["msg.geoip.zip"] + response.zip + "\n" + lang["msg.geoip.timezone"] + response.timezone + "\n" + lang["msg.geoip.coordinates"] + response.lat + ", " + response.lon + "\n" + lang["msg.geoip.org"] + response.org + "\n" + lang["msg.geoip.mobile"] + response.mobile + "\n" + lang["msg.geoip.proxy"] + response.proxy + "\n" + lang["msg.geoip.hosting"] + response.hosting, function (err) {
+            if (err) return console.log(err);
+        });
+        notifier.notify({
+            title: config.name,
+            message: lang["msg.file.created"]
+          });
+          inquirer.prompt(endproccess).then(answers => {
+            process.exit()
+          })
+
 
     }
 };

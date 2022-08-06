@@ -1,26 +1,37 @@
 const inquirer = require('inquirer')
 const crypto = require('crypto');
-const config = require("../config.json")
-var lang = require("../lang/en.json")
+const config = require(process.cwd() + "/src/config.json")
+fs = require('fs');
+const homeDir = require('os').homedir();
+const desktopDir = `${homeDir}/Desktop`;
+const {
+    v1: uuidv1,
+    v4: uuidv4,
+} = require('uuid');
+const notifier = require('node-notifier');
+
+var lang = require(process.cwd() + "/src/lang/en.json")
 
 if (config.lang == "en") {
-    var lang = require("../lang/en.json")
+    var lang = require(process.cwd() + "/src/lang/en.json")
 } else if (config.lang == "de") {
-    var lang = require("../lang/de.json")
+    var lang = require(process.cwd() + "/src/lang/de.json")
 } else if (config.lang == "es") {
-    var lang = require("../lang/es.json")
+    var lang = require(process.cwd() + "/src/lang/es.json")
 }
 
 var questions = [
     {
         type: 'input',
         name: 'text',
+        prefix: '',
         message: lang["msg.decode.text"]
     },
     {
         type: 'list',
         name: 'keyc',
         message: lang["msg.encode.keyc"],
+        prefix: '',
         choices: [
             { name: lang["msg.encode.key1"], value: "1" },
             { name: lang["msg.encode.key2"], value: "2" },
@@ -34,10 +45,19 @@ var customkey = [
     {
         type: 'input',
         name: 'key2',
+        prefix: '',
         message: lang["msg.decode.key"]
     }
 ]
 
+var endproccess = [
+    {
+        type: 'input',
+        name: 'end',
+        prefix: '',
+        message: lang["msg.end"]
+    }
+]
 
 inquirer.prompt(questions).then(answers => {
     const text = answers['text']
@@ -85,7 +105,17 @@ inquirer.prompt(questions).then(answers => {
             }
             var decrypted = decrypt(text)
             console.log(lang["msg.decode.res"] + decrypted)
-  //      var decrypted = decrypt(text)
-    //    console.log(lang["msg.decode.res"] + decrypted)
+
+            fs.writeFile(desktopDir + '/decoding-' + uuidv4() + '.txt',lang["msg.decode.res"] + decrypted , function (err) {
+                if (err) return console.log(err);
+            });
+            notifier.notify({
+                title: config.name,
+                message: lang["msg.file.created"]
+              });
+              inquirer.prompt(endproccess).then(answers => {
+                process.exit()
+              })
+
     }
 })
