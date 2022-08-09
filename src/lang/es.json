@@ -1,6 +1,8 @@
 {   "msg.start": "¿Qué opción quieres usar?",
     "msg.start.options.encode": "Codificar",
     "msg.start.options.decode": "Decodificar",	
+    "msg.start.options.geoip": "Localizar IP",
+    "msg.start.options.speedtest": "Prueba rápida",
     "msg.start.options.settings": "Configuración",
     "msg.option": "¿Qué te gustaría cambiar al respecto?",
     "msg.option.language": "Idioma",
@@ -44,6 +46,8 @@
     "msg.geoip.mobile": "Móvil: ",
     "msg.geoip.proxy": "Proxy: ",
     "msg.geoip.hosting": "Centro de datos/servidor: ",
-    "msg.end": "Pulse cualquier tecla para finalizar el proceso.",
-    "msg.file.created": "Se creó un archivo con el resultado en el escritorio."
+    "msg.end": "Pulse ENTER para finalizar el proceso.",
+    "msg.file.created": "Se creó un archivo con el resultado en el escritorio.",
+    "mgs.speedtest.start": "Pulse ENTER para iniciar la prueba de velocidad.",
+    "msg.speedtest.result": "Tu velocidad de internet es: "
 }

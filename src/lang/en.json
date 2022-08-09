@@ -3,6 +3,7 @@
     "msg.start.options.encode": "Encode",
     "msg.start.options.decode": "Decode",
     "msg.start.options.geoip": "Locate IP",
+    "msg.start.options.speedtest": "Speedtest",
     "msg.start.options.settings": "Settings",
     "msg.option": "What do you want to change?",
     "msg.option.language": "Language",
@@ -50,6 +51,8 @@
     "msg.geoip.mobile": "Mobile: ",
     "msg.geoip.proxy": "Proxy: ",
     "msg.geoip.hosting": "Datacenter/Server: ",
-    "msg.end": "Press any key to end the process.",
-    "msg.file.created": "A file with the result was created on the desktop."
+    "msg.end": "Press ENTER to end the process.",
+    "msg.file.created": "A file with the result was created on the desktop.",
+    "mgs.speedtest.start": "Press ENTER to start the speedtest.",
+    "msg.speedtest.result": "Your speed is: "
 }

@@ -3,6 +3,7 @@
     "msg.start.options.encode": "Verschlüsseln",
     "msg.start.options.decode": "Entschlüsseln",
     "msg.start.options.geoip": "IP-Adresse tracken",
+    "msg.start.options.speedtest": "Speedtest",
     "msg.start.options.settings": "Einstellungen",
     "msg.option": "Was willst du ändern?",
     "msg.option.language": "Sprache",
@@ -51,6 +52,8 @@
     "msg.geoip.mobile": "Handy: ",
     "msg.geoip.proxy": "Verschlüsselt: ",
     "msg.geoip.hosting": "Rechenzentrum/Server: ",
-    "msg.end": "Drücke eine beliebige Taste um den Prozess zu beenden.",
-    "msg.file.created": "Eine Datei mit dem Ergebniss wurde auf dem Desktop erstellt."
+    "msg.end": "Drücke ENTER um den Prozess zu beenden.",
+    "msg.file.created": "Eine Datei mit dem Ergebniss wurde auf dem Desktop erstellt.",
+    "msg.speedtest.start": "Drücke ENTER um den Speedtest zu starten.",
+    "msg.speedtest.result": "Die Geschwindigkeit beträgt: "
 }

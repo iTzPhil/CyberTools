@@ -14,6 +14,7 @@ CyberTools is a Node.js script by @iTzPhil (me) which offers you features like t
 ## Features
 - Text encoding and decoding
 - IP adress geo-location
+- Speedtest
 - _More coming soon_
 
 <br><br>

@@ -27,6 +27,7 @@ var start = [
             { name: lang["msg.start.options.encode"], value: 'encode' },
             { name: lang["msg.start.options.decode"], value: 'decode' },
             { name: lang["msg.start.options.geoip"], value: 'geoip' },
+            { name: lang["msg.start.options.speedtest"], value: 'speedtest' },
             { name: lang["msg.start.options.settings"], value: 'settings' }
         ]
     }]
@@ -103,6 +104,9 @@ inquirer.prompt(start).then(answers => {
     } else if (action == 'geoip') {
         console.log('\n \n \n')
         const geoipfile = require("./src/code/geoip.js")
+    } else if (action == 'speedtest') {
+        console.log('\n \n \n')
+        const speedtestfile = require("./src/code/speedtest.js")
     } else if (action == 'settings') {
         inquirer.prompt(settings).then(answers => {
             if (answers['option'] == 'language') {
