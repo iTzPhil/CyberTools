@@ -16,6 +16,15 @@ CyberTools is a Node.js script by @iTzPhil (me) which offers you features like t
 
 <br><br>
 
+## Installation
+1. Download the latest release from [GitHub](https://github.com/iTzPhil/CyberTools/releases/latest) <br>
+2. Unzip the files in a directory of your choice <br>
+3. If you want to, you can create a shortcut to the executable file <br>
+4. You are good to go! <br> **Attention! The tool has to be executed in the root directory of the tool.**
+
+
+
+<br><br>
 ## Node modules 
 
 
