@@ -5,6 +5,8 @@ fs = require('fs');
 const homeDir = require('os').homedir();
 const desktopDir = `${homeDir}/Desktop`;
 const notifier = require('node-notifier');
+const { DeterminateBar } = require('node-loading');
+const loading = DeterminateBar();
 
 if (config.lang == "en") {
     var lang = require(process.cwd() + "/src/lang/en.json")
@@ -42,7 +44,19 @@ let speedtest = new FastSpeedtest({
     bufferSize: 8, 
     unit: FastSpeedtest.UNITS.Mbps 
 })
- 
+
+let progress = 0;
+loading.remainingColor = "red"
+loading.completeColor = "green"
+const intervalId = setInterval(() => {
+  loading.setProgress(++progress);
+
+  if (progress === 100) {
+    loading.stop();
+    clearInterval(intervalId);
+  }
+}, 100);
+
 speedtest.getSpeed().then(s => {
     var res = (lang["msg.speedtest.result"] + `${s} Mbps`)
     console.log(res);
