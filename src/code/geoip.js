@@ -94,8 +94,6 @@ geoip.onreadystatechange = function () {
             message: lang["msg.file.created"],
             icon: process.cwd() + '/src/assets/icon.png',
 
-            message: lang["msg.file.created"]
-
           });
           inquirer.prompt(endproccess).then(answers => {
             process.exit()
