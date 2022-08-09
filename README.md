@@ -40,6 +40,7 @@ CyberTools is a Node.js script by @iTzPhil (me) which offers you features like t
 | xmlhttprequest | Send requests to apis |
 | uuid | Generate unique IDs |
 | node-notifier | Send notifications to the user |
+| node-loading | Show loading animation |
 
 
 
