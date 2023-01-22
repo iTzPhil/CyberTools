@@ -23,7 +23,7 @@
   "dependencies": {
     "edit-json-file": "^1.7.0",
     "fast-speedtest-api": "^0.3.2",
-    "inquirer": "^9.1.2",
+    "inquirer": "^9.1.4",
     "node-loading": "^1.1.1",
     "node-notifier": "^10.0.1",
     "uuid": "^9.0.0",
