@@ -4,6 +4,7 @@
     "msg.start.options.geoip": "Localizar IP",
     "msg.start.options.speedtest": "Prueba rápida",
     "msg.start.options.settings": "Configuración",
+    "msg.start.options.password": "Generador de contraseñas",
     "msg.option": "¿Qué te gustaría cambiar al respecto?",
     "msg.option.language": "Idioma",
     "msg.option.keysave": "Claves guardadas",
@@ -49,5 +50,14 @@
     "msg.end": "Pulse ENTER para finalizar el proceso.",
     "msg.file.created": "Se creó un archivo con el resultado en el escritorio.",
     "mgs.speedtest.start": "Pulse ENTER para iniciar la prueba de velocidad.",
-    "msg.speedtest.result": "Tu velocidad de internet es: "
+    "msg.speedtest.result": "Tu velocidad de internet es: ",
+    "msg.pwgen.length": "¿Cuántos caracteres debe tener la contraseña?",
+    "msg.pwgen.length.invalid": "La longitud de la contraseña debe ser un número.",
+    "msg.pwgen.numbers": "¿La contraseña debe contener números?",
+    "msg.pwgen.symbols": "¿La contraseña debe contener símbolos?",
+    "msg.pwgen.uppercase": "¿La contraseña debe contener letras mayúsculas?",
+    "msg.pwgen.lowercase": "¿La contraseña debe contener letras minúsculas?",
+    "msg.pwgen.generated": "La contraseña generada es:",
+    "msg.pwgen.yes": "Sí",
+    "msg.pwgen.no": "No"
 }

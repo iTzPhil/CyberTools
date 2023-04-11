@@ -1,4 +1,4 @@
-const inquirer = require('inquirer')
+const inquirer = require('inquirer');
 const config = require(process.cwd() + "/src/config.json")
 const editJsonFile = require("edit-json-file");
 let cfg = editJsonFile(process.cwd() + `/src/config.json`);
@@ -27,6 +27,7 @@ var start = [
             { name: lang["msg.start.options.encode"], value: 'encode' },
             { name: lang["msg.start.options.decode"], value: 'decode' },
             { name: lang["msg.start.options.geoip"], value: 'geoip' },
+            { name: lang["msg.start.options.password"], value: 'password' },
             { name: lang["msg.start.options.speedtest"], value: 'speedtest' },
             { name: lang["msg.start.options.settings"], value: 'settings' }
         ]
@@ -104,6 +105,9 @@ inquirer.prompt(start).then(answers => {
     } else if (action == 'geoip') {
         console.log('\n \n \n')
         const geoipfile = require("./src/code/geoip.js")
+    } else if (action == 'password') {
+        console.log('\n \n \n')
+        const passwordfile = require("./src/code/passwordgen.js")
     } else if (action == 'speedtest') {
         console.log('\n \n \n')
         const speedtestfile = require("./src/code/speedtest.js")
@@ -133,14 +137,14 @@ inquirer.prompt(start).then(answers => {
                         console.log(lang["msg.lang.change.es"])
                         inquirer.prompt(endproccess).then(answers => {
                             process.exit()
-                          })
-            
+                        })
+
                     } else {
                         console.log(lang["msg.lang.invalid"])
                         inquirer.prompt(endproccess).then(answers => {
                             process.exit()
-                          })
-            
+                        })
+
                     }
                 })
             }
