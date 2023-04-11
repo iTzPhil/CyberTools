@@ -29,6 +29,7 @@ var start = [
             { name: lang["msg.start.options.geoip"], value: 'geoip' },
             { name: lang["msg.start.options.password"], value: 'password' },
             { name: lang["msg.start.options.speedtest"], value: 'speedtest' },
+            { name: lang["msg.start.options.qr"], value: 'qrcode' },
             { name: lang["msg.start.options.settings"], value: 'settings' }
         ]
     }]
@@ -111,6 +112,9 @@ inquirer.prompt(start).then(answers => {
     } else if (action == 'speedtest') {
         console.log('\n \n \n')
         const speedtestfile = require("./src/code/speedtest.js")
+    } else if (action == 'qrcode') {
+        console.log('\n \n \n')
+        const qrcodefile = require("./src/code/qrcode.js")
     } else if (action == 'settings') {
         inquirer.prompt(settings).then(answers => {
             if (answers['option'] == 'language') {

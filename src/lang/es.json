@@ -1,10 +1,12 @@
-{   "msg.start": "¿Qué opción quieres usar?",
+{
+    "msg.start": "¿Qué opción quieres usar?",
     "msg.start.options.encode": "Codificar",
-    "msg.start.options.decode": "Decodificar",	
+    "msg.start.options.decode": "Decodificar",
     "msg.start.options.geoip": "Localizar IP",
     "msg.start.options.speedtest": "Prueba rápida",
     "msg.start.options.settings": "Configuración",
     "msg.start.options.password": "Generador de contraseñas",
+    "msg.start.options.qr": "Generador de códigos QR",
     "msg.option": "¿Qué te gustaría cambiar al respecto?",
     "msg.option.language": "Idioma",
     "msg.option.keysave": "Claves guardadas",
@@ -59,5 +61,8 @@
     "msg.pwgen.lowercase": "¿La contraseña debe contener letras minúsculas?",
     "msg.pwgen.generated": "La contraseña generada es:",
     "msg.pwgen.yes": "Sí",
-    "msg.pwgen.no": "No"
+    "msg.pwgen.no": "No",
+    "msg.qr.text": "¿Qué texto quieres codificar en un código QR?",
+    "msg.qr.done": "El código QR se ha creado en el escritorio.",
+    "msg.qr.error": "No se pudo crear el código QR."
 }

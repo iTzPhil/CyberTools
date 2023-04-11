@@ -6,6 +6,7 @@
     "msg.start.options.speedtest": "Speedtest",
     "msg.start.options.settings": "Settings",
     "msg.start.options.password": "Generate password",
+    "msg.start.options.qr": "Generate QR-Code",
     "msg.option": "What do you want to change?",
     "msg.option.language": "Language",
     "msg.option.keysave": "Saved keys",
@@ -64,5 +65,8 @@
     "msg.pwgen.lowercase": "Should the password contain lowercase letters?",
     "msg.pwgen.generated": "The password has been copied to your clipboard. Your password is: ",
     "msg.pwgen.yes": "Yes",
-    "msg.pwgen.no": "No"
+    "msg.pwgen.no": "No",
+    "msg.qr.text": "What do you want to encode in the QR-Code?",
+    "msg.qr.done": "The QR-Code has been created on your desktop.",
+    "msg.qr.error": "The text is too long. It can only be 2953 characters long."
 }
