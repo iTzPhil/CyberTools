@@ -15,16 +15,16 @@ CyberTools is a Node.js script by @iTzPhil (me) which offers you features like t
 - Text encoding and decoding
 - IP adress geo-location
 - Speedtest
+- Password generation
 - _More coming soon_
 
 <br><br>
 
 ## Installation
-1. Download the latest release from the [release tab](https://github.com/iTzPhil/CyberTools/releases/latest). With dowloading you agree to that I (the owner of this repository) have no liability for any damage caused by using this software. Use at your own risk.
-2. I am not responsible for the use or consequences of using this software.
-3. Unzip the files in a directory of your choice <br>
-4. If you want to, you can create a shortcut to the executable file <br>
-5. You are good to go! <br> **Attention! The tool has to be executed in the root directory of the tool.**
+1. Download the latest release from the [release tab](https://github.com/iTzPhil/CyberTools/releases/latest). With dowloading you agree to that I (the owner of this repository) have no liability for any damage caused by using this software. Use at your own risk. I am not responsible for the use or consequences of using this software.
+2. Unzip the files in a directory of your choice <br>
+3. If you want to, you can create a shortcut to the executable file <br>
+4. You are good to go! <br> **Attention! The tool has to be executed in the root directory of the tool.**
 
 
 
@@ -34,13 +34,15 @@ CyberTools is a Node.js script by @iTzPhil (me) which offers you features like t
 
 | Name  | Function  |
 | ------------ | ------------ |
-|  inquirer | Ask for stuff in the console  |
-| crypto  | En- and Decode texts  |
+| inquirer | Ask for stuff in the console  |
+| crypto | En- and Decode texts  |
 | edit-json-file  | Edit json files  |
 | xmlhttprequest | Send requests to apis |
 | uuid | Generate unique IDs |
 | node-notifier | Send notifications to the user |
 | node-loading | Show loading animation |
+| generate-password | Generate passwords |
+| clipboardy | Copy text to clipboard |
 
 
 
