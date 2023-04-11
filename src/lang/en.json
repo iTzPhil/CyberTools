@@ -5,6 +5,7 @@
     "msg.start.options.geoip": "Locate IP",
     "msg.start.options.speedtest": "Speedtest",
     "msg.start.options.settings": "Settings",
+    "msg.start.options.password": "Generate password",
     "msg.option": "What do you want to change?",
     "msg.option.language": "Language",
     "msg.option.keysave": "Saved keys",
@@ -54,5 +55,14 @@
     "msg.end": "Press ENTER to end the process.",
     "msg.file.created": "A file with the result was created on the desktop.",
     "mgs.speedtest.start": "Press ENTER to start the speedtest.",
-    "msg.speedtest.result": "Your speed is: "
+    "msg.speedtest.result": "Your speed is: ",
+    "msg.pwgen.length": "How long should the password be?",
+    "msg.pwgen.length.invalid": "The providet length is not valid.",
+    "msg.pwgen.numbers": "Should the password contain numbers?",
+    "msg.pwgen.symbols": "Should the password contain symbols?",
+    "msg.pwgen.uppercase": "Should the password contain uppercase letters?",
+    "msg.pwgen.lowercase": "Should the password contain lowercase letters?",
+    "msg.pwgen.generated": "The password has been copied to your clipboard. Your password is: ",
+    "msg.pwgen.yes": "Yes",
+    "msg.pwgen.no": "No"
 }

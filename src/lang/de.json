@@ -5,6 +5,7 @@
     "msg.start.options.geoip": "IP-Adresse tracken",
     "msg.start.options.speedtest": "Speedtest",
     "msg.start.options.settings": "Einstellungen",
+    "msg.start.options.password": "Passwort generieren",
     "msg.option": "Was willst du ändern?",
     "msg.option.language": "Sprache",
     "msg.option.keysave": "Gespeicherte Schlüssel",
@@ -55,5 +56,14 @@
     "msg.end": "Drücke ENTER um den Prozess zu beenden.",
     "msg.file.created": "Eine Datei mit dem Ergebniss wurde auf dem Desktop erstellt.",
     "msg.speedtest.start": "Drücke ENTER um den Speedtest zu starten.",
-    "msg.speedtest.result": "Die Geschwindigkeit beträgt: "
+    "msg.speedtest.result": "Die Geschwindigkeit beträgt: ",
+    "msg.pwgen.length": "Wie lang soll das Passwort sein?",
+    "msg.pwgen.length.invalid": "Diese Länge ist ungültig",
+    "msg.pwgen.numbers": "Sollen Zahlen enthalten sein?",
+    "msg.pwgen.symbols": "Sollen Sonderzeichen enthalten sein?",
+    "msg.pwgen.uppercase": "Sollen Großbuchstaben enthalten sein?",
+    "msg.pwgen.lowercase": "Sollen Kleinbuchstaben enthalten sein?",
+    "msg.pwgen.generated": "Das Passwort wurde in die Zwischenablage kopiert. Es lautet:",
+    "msg.pwgen.yes": "Ja",
+    "msg.pwgen.no": "Nein"
 }
