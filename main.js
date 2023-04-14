@@ -30,6 +30,7 @@ var start = [
             { name: lang["msg.start.options.password"], value: 'password' },
             { name: lang["msg.start.options.speedtest"], value: 'speedtest' },
             { name: lang["msg.start.options.qr"], value: 'qrcode' },
+            { name: lang["msg.start.options.stegano"], value: 'stegano' },
             { name: lang["msg.start.options.settings"], value: 'settings' }
         ]
     }]
@@ -115,6 +116,9 @@ inquirer.prompt(start).then(answers => {
     } else if (action == 'qrcode') {
         console.log('\n \n \n')
         const qrcodefile = require("./src/code/qrcode.js")
+    } else if (action == 'stegano') {
+        console.log('\n \n \n')
+        const steganofile = require("./src/code/stegano.js")
     } else if (action == 'settings') {
         inquirer.prompt(settings).then(answers => {
             if (answers['option'] == 'language') {

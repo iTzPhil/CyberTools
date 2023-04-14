@@ -16,6 +16,8 @@ NodeTools is a Node.js script by @iTzPhil (me) which offers you features like te
 - IP adress geo-location
 - Speedtest
 - Password generation
+- QR code generation
+- Steganography
 - _More coming soon_
 
 <br><br>
@@ -43,6 +45,8 @@ NodeTools is a Node.js script by @iTzPhil (me) which offers you features like te
 | node-loading | Show loading animation |
 | generate-password | Generate passwords |
 | clipboardy | Copy text to clipboard |
+| qrcode | Generate QR codes |
+| steggy | Steganography |
 
 
 

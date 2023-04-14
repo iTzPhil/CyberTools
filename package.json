@@ -29,6 +29,7 @@
     "node-loading": "^1.1.1",
     "node-notifier": "^10.0.1",
     "qrcode": "^1.5.1",
+    "steggy": "^2.0.1",
     "uuid": "^9.0.0",
     "xmlhttprequest": "^1.8.0"
   }
