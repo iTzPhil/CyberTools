@@ -64,5 +64,12 @@
     "msg.pwgen.no": "No",
     "msg.qr.text": "¿Qué texto quieres codificar en un código QR?",
     "msg.qr.done": "El código QR se ha creado en el escritorio.",
-    "msg.qr.error": "No se pudo crear el código QR."
+    "msg.qr.error": "No se pudo crear el código QR.",
+    "msg.steg.mode": "¿Qué modo quieres usar?",
+    "msg.steg.mode.encode": "Ocultar texto",
+    "msg.steg.mode.decode": "Desocultar texto",
+    "msg.steg.text": "¿Qué quieres ocultar?",
+    "msg.steg.path": "¿Dónde está la imagen original? (Ruta del sistema o nombre de archivo en '/src/assets/steg-input')\n",
+    "msg.steg.err": "No se pudo encontrar la imagen",
+    "msg.steg.done": "El texto se ha ocultado correctamente. La imagen se ha guardado en el escritorio"
 }

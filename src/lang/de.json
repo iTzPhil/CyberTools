@@ -6,6 +6,7 @@
     "msg.start.options.speedtest": "Speedtest",
     "msg.start.options.settings": "Einstellungen",
     "msg.start.options.password": "Passwort generieren",
+    "msg.start.options.stegano": "Steganografie",
     "msg.start.options.qr": "QR-Code erstellen",
     "msg.option": "Was willst du ändern?",
     "msg.option.language": "Sprache",
@@ -63,11 +64,20 @@
     "msg.pwgen.numbers": "Sollen Zahlen enthalten sein?",
     "msg.pwgen.symbols": "Sollen Sonderzeichen enthalten sein?",
     "msg.pwgen.uppercase": "Sollen Großbuchstaben enthalten sein?",
+
+
     "msg.pwgen.lowercase": "Sollen Kleinbuchstaben enthalten sein?",
     "msg.pwgen.generated": "Das Passwort wurde in die Zwischenablage kopiert. Es lautet:",
     "msg.pwgen.yes": "Ja",
     "msg.pwgen.no": "Nein",
     "msg.qr.text": "Was möchtest du in einen QR-Code umwandeln?",
     "msg.qr.done": "Der QR-Code wurde auf dem Desktop erstellt.",
-    "msg.qr.error": "Der Text ist zu lang. Er darf maximal 2953 Zeichen lang sein."
+    "msg.qr.error": "Der Text ist zu lang. Er darf maximal 2953 Zeichen lang sein.",
+    "msg.steg.mode": "Möchtest du Texte verstecken oder aufdecken?",
+    "msg.steg.mode.encode": "Text verstecken",
+    "msg.steg.mode.decode": "Text aufdecken",
+    "msg.steg.text": "Was möchtest du verstecken?",
+    "msg.steg.path": "Wo liegt das Orginalbild? (Systempfad oder Dateiname in '/src/assets/steg-input')\n",
+    "msg.steg.err": "Das Bild konnte nicht gefunden werden.",
+    "msg.steg.done": "Der Text wurde erfolgreich versteckt. Das Bild wurde auf dem Desktop gespeichert."
 }

@@ -68,5 +68,12 @@
     "msg.pwgen.no": "No",
     "msg.qr.text": "What do you want to encode in the QR-Code?",
     "msg.qr.done": "The QR-Code has been created on your desktop.",
-    "msg.qr.error": "The text is too long. It can only be 2953 characters long."
+    "msg.qr.error": "The text is too long. It can only be 2953 characters long.",
+    "msg.steg.mode": "Do you want to hide or uncover text?",
+    "msg.steg.mode.encode": "Hide text",
+    "msg.steg.mode.decode": "Uncover text",
+    "msg.steg.text": "What do you want to hide?",
+    "msg.steg.path": "Where is the image located? (Provide either a systempath or name in '/src/assets/steg-input')",
+    "msg.steg.err": "The image could not be found. Please check the path.",
+    "msg.steg.done": "The text has been hidden in the image. The image is stored on your desktop."
 }
