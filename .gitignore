@@ -1,9 +1,6 @@
 
 # Release
-nodetools-win.exe
-nodetools-linux
-nodetools.exe
-nodetools-macos
+dist/*
 
 
 

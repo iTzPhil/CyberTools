@@ -37,6 +37,7 @@ NodeTools is a Node.js script by @iTzPhil (me) which offers you features like te
 | Name  | Function  |
 | ------------ | ------------ |
 | electron | GUI |
+| electron-builder | Build the app |
 | crypto | En- and Decode texts  |
 | xmlhttprequest | Send requests to apis |
 | uuid | Generate unique IDs |

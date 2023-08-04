@@ -36,6 +36,9 @@
       }
     },
     "files": [
+      "main.js",
+      "src/**/*",
+      "src/*"
     ]
   },
   "keywords": [],
@@ -49,6 +52,7 @@
     "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
-    "electron": "^25.3.2"
+    "electron": "^25.3.2",
+    "electron-builder": "^24.6.3"
   }
 }
