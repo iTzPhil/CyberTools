@@ -51,21 +51,21 @@
     </div>
     <div class="encode" id="encode">
       <h1>Encode</h1>
-      <textarea id="input" class="input" rows="10" placeholder="Enter text to encode"></textarea>
-      <button id="convert" class="convert">Encode</button>
-      <textarea id="output" class="output" rows="10" placeholder="Encoded text" disabled="true"></textarea>
+      <textarea id="encode-input" class="input" rows="6" placeholder="Enter text to encode"></textarea>
+      <button id="encode-button" class="convert">Encode</button>
+      <textarea id="encode-output" class="output" rows="6" placeholder="Encoded text" disabled="true"></textarea>
     </div>
     <div class="decode" id="decode">
       <h1>Decode</h1>
-      <textarea id="input" class="input" rows="10" placeholder="Enter text to decode"></textarea>
-      <button id="convert" class="convert">Decode</button>
-      <textarea id="output" class="output" rows="10" placeholder="Decoded text" disabled="true"></textarea>
+      <textarea id="decode-input" class="input" rows="6" placeholder="Enter text to decode"></textarea>
+      <button id="decode-button" class="convert">Decode</button>
+      <textarea id="decode-output" class="output" rows="6" placeholder="Decoded text" disabled="true"></textarea>
     </div>
     <div id="ip_location" class="ip_location">
       <h1>IP Location</h1>
-      <input id="input" class="input" type="text" placeholder="Enter IP" />
-      <button id="convert" class="convert">Get location</button>
-      <textarea id="output" class="output" rows="10" placeholder="Location" disabled="true"></textarea>
+      <input id="geoip-input" class="input" type="text" placeholder="Enter IP" />
+      <button id="geoip-button" class="convert">Get location</button>
+      <textarea id="geoip-output" class="output" rows="8" placeholder="Location" disabled="true"></textarea>
     </div>
     <div id="password_generator" class="password_generator">
       <h1>Password generator</h1>
@@ -96,14 +96,14 @@
           </td>
         </tr>
       </table>
-      <button id="generate" class="convert">Generate password</button>
-      <textarea id="password" class="output" rows="10" placeholder="Password" disabled="true"></textarea>
+      <button id="generate-password" class="convert">Generate password</button>
+      <textarea id="password-output" class="output" rows="6" placeholder="Password" disabled="true"></textarea>
     </div>
     <div id="qr_code_generator" class="qr_code_generator">
       <h1>QR Code generator</h1>
-      <input id="input" class="input" type="text" placeholder="Enter text to encode" />
-      <button id="convert" class="convert">Generate QR Code</button>
-      <div id="output" class="output"></div>
+      <input id="qr-input" class="input" type="text" placeholder="Enter text to encode" />
+      <button id="qr-button" class="convert">Generate QR Code</button>
+      <svg id="qr-output" class="output"></svg>
     </div>
     <div id="steganography" class="steganography">
       <h1 class="title">Steganography</h1>
@@ -117,20 +117,20 @@
         <tr>
           <td>
             <form>
-              <label for="file-input">File:</label>
-              <input type="file" id="file-input" class="file-input" />
-              <label for="text-input">Text:</label>
-              <input type="text" id="text-input" class="text-input" /><br />
-              <button type="button" id="encode-button">Encode</button><br />
+              <label for="conceal-file-input">File:</label>
+              <input type="file" id="conceal-file-input" class="file-input" accept=".png" />
+              <label for="conceal-text-input">Text:</label>
+              <input type="text" id="conceal-text-input" class="text-input" /><br />
+              <button type="button" id="conceal-button">Encode</button><br />
             </form>
-            <img id="encoded-image" />
+            <img id="conceal-output" />
           </td>
           <td>
             <form>
-              <label for="image-input">Image:</label>
-              <input type="file" id="image-input" /><br />
-              <button type="button" id="decode-button">Decode</button><br />
-              <textarea id="decoded-text" disabled></textarea>
+              <label for="reveal-file-input">Image:</label>
+              <input type="file" id="reveal-file-input" accept=".png"/><br />
+              <button type="button" id="reveal-button">Decode</button><br />
+              <textarea id="reveal-output" disabled></textarea>
             </form>
           </td>
         </tr>

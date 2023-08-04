@@ -4,9 +4,10 @@ var generator = require('generate-password');
 var QRCode = require('qrcode')
 var steggy = require('steggy');
 const fs = require('fs');
+const desktopPath = require('path').join(require('os').homedir(), 'Desktop');
+const uuidv4 = require('uuid').v4;
 
-
-function encrypt(text, key, iv) {
+function encode(text, key, iv) {
     var cipher = crypto.createCipheriv('aes-256-cbc', key, iv)
     var crypted = cipher.update(text, 'utf8', 'hex')
     crypted += cipher.final('hex');
@@ -22,12 +23,12 @@ function decode(text, key, iv) {
 
 async function geoip(query) {
     return new Promise((resolve, reject) => {
-        var endpoint = 'http://ip-api.com/json/' + query + '?fields=18081275';
+        var endpoint = 'http://ip-api.com/json/' + query + '?fields=17028085';
         var geoip = new XMLHttpRequest();
         geoip.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 var response = JSON.parse(this.responseText);
-                resolve(response);
+                resolve(this.responseText);
             }
         };
         geoip.open('GET', endpoint, true);
@@ -54,19 +55,23 @@ function passwordGen(int, num, sym, uc, lc) {
 }
 
 function qrCode(text) {
+    QRCode.toFile(desktopPath + `/qr-${uuidv4()}.png`, text, {
+        color: {
+            dark: '#000000',
+            light: '#ffffff'
+        }
+    })
     return new Promise((resolve, reject) => {
-        QRCode.toString(text, { type: 'svg' }, function (err, svgString) {
-            if (err) {
-                reject(err);
-            } else {
-                resolve(svgString);
-            }
-        });
-    });
+        QRCode.toString(text, { type: 'svg' }, (err, url) => {
+            if (err) throw err
+            resolve(url)
+        })
+    })
 }
 
 function conceal(img, text) {
     const concealed = steggy.conceal()(img, text, 'utf8')
+    fs.writeFileSync(desktopPath + `/concealed-${uuidv4()}.png`, concealed)
     return concealed
 }
 
@@ -76,7 +81,7 @@ function reveal(img) {
 }
 
 module.exports = {
-    encrypt,
+    encode,
     decode,
     geoip,
     passwordGen,

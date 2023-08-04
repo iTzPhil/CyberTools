@@ -36,15 +36,11 @@ NodeTools is a Node.js script by @iTzPhil (me) which offers you features like te
 
 | Name  | Function  |
 | ------------ | ------------ |
-| inquirer | Ask for stuff in the console  |
+| electron | GUI |
 | crypto | En- and Decode texts  |
-| edit-json-file  | Edit json files  |
 | xmlhttprequest | Send requests to apis |
 | uuid | Generate unique IDs |
-| node-notifier | Send notifications to the user |
-| node-loading | Show loading animation |
 | generate-password | Generate passwords |
-| clipboardy | Copy text to clipboard |
 | qrcode | Generate QR codes |
 | steggy | Steganography |
 
