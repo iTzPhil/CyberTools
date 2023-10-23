@@ -24,7 +24,7 @@
     "clipboardy": "^2.3.0",
     "edit-json-file": "^1.7.0",
     "fast-speedtest-api": "^0.3.2",
-    "generate-password": "^1.7.0",
+    "generate-password": "^1.7.1",
     "inquirer": "^8.2.4",
     "node-loading": "^1.1.1",
     "node-notifier": "^10.0.1",
